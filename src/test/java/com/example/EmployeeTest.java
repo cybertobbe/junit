@@ -35,7 +35,51 @@ class EmployeeTest {
             assertThat(result).isEqualTo(10000);
       }
 
+      @Test
+      @DisplayName("Check that isPaid returns true")
+      void checkThatIsPaidReturnsTrue() {
+            Employee employee = new Employee("4", 10000);
+            employee.setPaid(true);
+            var result = employee.isPaid();
+            assertThat(result).isTrue();
+      }
 
+      @Test
+      @DisplayName("Check that isPaid returns false")
+      void checkThatIsPaidReturnsFalse() {
+            Employee employee = new Employee("5", 10000);
+            employee.setPaid(false);
+            var result = employee.isPaid();
+            assertThat(result).isFalse();
+      }
+
+      @Test
+      @DisplayName("Check that setPaid sets true")
+      void checkThatSetPaidSetsTrue() {
+            Employee employee = new Employee("5", 10000);
+            employee.setPaid(true);
+            var result = employee.isPaid();
+            assertThat(result).isTrue();
+
+      }
+
+      @Test
+      @DisplayName("Cheack that setPaid ")
+      void cheackThatSetPaid() {
+      Employee employee = new Employee("6", 10000);
+            employee.setPaid(false);
+            var result = employee.isPaid();
+            assertThat(result).isFalse();
+
+      }
+
+      @Test
+      @DisplayName("Check that toString returns correct string")
+      void checkThatToStringReturnsCorrectString() {
+            Employee employee = new Employee("7", 10000);
+            var result = employee.toString();
+            assertThat(result).isEqualTo("Employee [id=7, salary=10000.0]");
+      }
 
 
 
