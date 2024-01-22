@@ -27,6 +27,8 @@ public class Employee {
 		this.salary = salary;
 	}
 
+
+
 	public boolean isPaid() {
 		return paid;
 	}
@@ -41,3 +43,4 @@ public class Employee {
 	}
 
 }
+
