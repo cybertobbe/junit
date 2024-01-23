@@ -58,16 +58,15 @@ class EmployeeTest {
       @DisplayName("Check that setPaid sets true")
       void checkThatSetPaidSetsTrue() {
             employee.setPaid(true);
-            assertThat(employee.isPaid());
+            assertThat(employee.isPaid()).isTrue();
 
       }
 
       @Test
-      @DisplayName("Check that setPaid ")
-      void checkThatSetPaid() {
+      @DisplayName("Check that setPaid sets false ")
+      void checkThatSetPaidSetsFalse() {
             employee.setPaid(false);
-            var result = employee.isPaid();
-            assertThat(result).isFalse();
+            assertThat(employee.isPaid()).isFalse();
 
       }
 
