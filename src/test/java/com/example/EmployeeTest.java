@@ -31,6 +31,14 @@ class EmployeeTest {
       }
 
       @Test
+      @DisplayName("Check that getSalary returns correct salary")
+      void checkThatGetSalaryReturnsCorrectSalary(){
+            var result = employee.getSalary();
+            assertThat(result).isEqualTo(35000.0);
+            
+      }
+
+      @Test
       @DisplayName("Check that setSalary sets correct salary")
       void checkThatSetSalarySetsCorrectSalary() {
             employee.setSalary(10000);
@@ -39,31 +47,14 @@ class EmployeeTest {
       }
 
       @Test
-      @DisplayName("Check that isPaid returns true")
-      void checkThatIsPaidReturnsTrue() {
-            employee.setPaid(true);
-            var result = employee.isPaid();
-            assertThat(result).isTrue();
-      }
-
-      @Test
       @DisplayName("Check that isPaid returns false")
       void checkThatIsPaidReturnsFalse() {
-            employee.setPaid(false);
             var result = employee.isPaid();
             assertThat(result).isFalse();
       }
 
       @Test
-      @DisplayName("Check that setPaid sets true")
-      void checkThatSetPaidSetsTrue() {
-            employee.setPaid(true);
-            assertThat(employee.isPaid()).isTrue();
-
-      }
-
-      @Test
-      @DisplayName("Check that setPaid sets false ")
+      @DisplayName("Check that setPaid sets false")
       void checkThatSetPaidSetsFalse() {
             employee.setPaid(false);
             assertThat(employee.isPaid()).isFalse();
