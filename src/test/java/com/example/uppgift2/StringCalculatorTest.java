@@ -13,4 +13,13 @@ public class StringCalculatorTest {
            assertThat(result).isEqualTo(0);
       }
 
+      @Test
+      @DisplayName("Check that '1' returns 1")
+      void checkThat1Returns1() {
+             int result = StringCalculator.add("1");
+             assertThat(result).isEqualTo(1);
+      }
+
+
+
 }
