@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class StringCalculatorTest {
       @Test
@@ -47,6 +49,16 @@ public class StringCalculatorTest {
       void assertThatACustomDelimiterCanBeUsed() {
             int result = StringCalculator.add("//;\n1;2");
             assertThat(result).isEqualTo(3);
+      }
+
+      @Test
+      @DisplayName("Assert that there is no negative numbers")
+      void assertThatThereIsNoNegativeNumbers() {
+
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {StringCalculator.add("-1");});
+            assertThat(exception.getMessage()).isEqualTo("Negative numbers not allowed -1");
+
+
       }
 
 

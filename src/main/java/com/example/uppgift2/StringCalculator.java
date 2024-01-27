@@ -22,9 +22,14 @@ public class StringCalculator {
                         throw new IllegalArgumentException("Contains a new line after a comma");
                   }
 
+
                   int sum = 0;
                   for (String number : numArray) {
-                        sum += Integer.parseInt(number);
+                        int num = Integer.parseInt(number);
+                        if (num < 0) {
+                              throw new IllegalArgumentException("Negative numbers not allowed " + num);
+                        }
+                        sum += num;
                   }
                   return sum;
 
