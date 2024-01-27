@@ -15,7 +15,13 @@ public class StringCalculator {
             else
 
             {
-                  String[] numArray = numbers.split(",");
+                  String[] numArray = numbers.split("[,\n]");
+
+                  if(numbers.contains(".\n")) {
+                        throw new IllegalArgumentException("Contains a new line after a comma");
+                  }
+
+
                   int sum = 0;
 
                   for (String number : numArray) {

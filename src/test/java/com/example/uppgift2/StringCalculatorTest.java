@@ -35,6 +35,16 @@ public class StringCalculatorTest {
             assertThat(result).isEqualTo(15);
       }
 
+      @Test
+      @DisplayName("Given string with new line  or comma between numbers should return sum of numbers")
+      void givenStringWithNewLineOrCommaBetweenNumbersShouldReturnSumOfNumbers() {
+            int result = StringCalculator.add("1\n2,3");
+            assertThat(result).isEqualTo(6);
+      }
+
+
+
+
 
 
 
