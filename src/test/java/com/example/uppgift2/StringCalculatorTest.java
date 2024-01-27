@@ -42,6 +42,12 @@ public class StringCalculatorTest {
             assertThat(result).isEqualTo(6);
       }
 
+      @Test
+      @DisplayName("Assert that a custom delimiter can be used")
+      void assertThatACustomDelimiterCanBeUsed() {
+            int result = StringCalculator.add("//;\n1;2");
+            assertThat(result).isEqualTo(3);
+      }
 
 
 
