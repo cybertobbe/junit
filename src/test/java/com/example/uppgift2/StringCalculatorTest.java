@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.*;
 
 public class StringCalculatorTest {
       @Test
-      @DisplayName("Check that an empty string returns 0")
-      void checkThatAnEmptyStringReturns0() {
+      @DisplayName("Assert that an empty string returns 0")
+      void assertThatAnEmptyStringReturns0() {
            int result = StringCalculator.add("");
            assertThat(result).isEqualTo(0);
       }
@@ -19,6 +19,15 @@ public class StringCalculatorTest {
              int result = StringCalculator.add("1");
              assertThat(result).isEqualTo(1);
       }
+
+      @Test
+      @DisplayName("Given string 1 and 2 then return 3")
+      void givenString1and2ThenReturn3() {
+            int result = StringCalculator.add("1,2");
+            assertThat(result).isEqualTo(3);
+
+      }
+
 
 
 
