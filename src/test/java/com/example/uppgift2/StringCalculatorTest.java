@@ -28,6 +28,13 @@ public class StringCalculatorTest {
 
       }
 
+      @Test
+      @DisplayName("Assert that any amount of numbers returns sum")
+      void assertThatAnyAmountOfNumbersReturnsSum() {
+            int result = StringCalculator.add("1,2,3,4,5");
+            assertThat(result).isEqualTo(15);
+      }
+
 
 
 

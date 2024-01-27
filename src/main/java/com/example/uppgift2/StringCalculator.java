@@ -12,15 +12,17 @@ public class StringCalculator {
 
 
 
-            int commaIndex = numbers.indexOf(",");
-            if(commaIndex == -1){
-                  return Integer.parseInt(numbers);
-            }
-            else{
-                  String firstNumber = numbers.substring(0, commaIndex);
-                  String secondNumber = numbers.substring(commaIndex + 1);
+            else
 
-                  return Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber);
+            {
+                  String[] numArray = numbers.split(",");
+                  int sum = 0;
+
+                  for (String number : numArray) {
+                        sum += Integer.parseInt(number);
+                  }
+                  return sum;
+
             }
 
 
