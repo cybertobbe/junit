@@ -1,7 +1,6 @@
 package com.example.uppgift2;
 
 
-
 import java.util.regex.Pattern;
 
 public class StringCalculator {
@@ -48,7 +47,6 @@ public class StringCalculator {
 
                               num = 0;
                         sum += num;
-
 
 
                   }

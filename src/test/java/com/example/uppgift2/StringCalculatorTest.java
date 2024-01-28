@@ -11,15 +11,15 @@ public class StringCalculatorTest {
       @Test
       @DisplayName("Assert that an empty string returns 0")
       void assertThatAnEmptyStringReturns0() {
-           int result = StringCalculator.add("");
-           assertThat(result).isEqualTo(0);
+            int result = StringCalculator.add("");
+            assertThat(result).isEqualTo(0);
       }
 
       @Test
       @DisplayName("Check that '1' returns 1")
       void checkThat1Returns1() {
-             int result = StringCalculator.add("1");
-             assertThat(result).isEqualTo(1);
+            int result = StringCalculator.add("1");
+            assertThat(result).isEqualTo(1);
       }
 
       @Test
@@ -55,14 +55,18 @@ public class StringCalculatorTest {
       @DisplayName("Assert that there is no negative numbers")
       void assertThatThereIsNoNegativeNumbers() {
 
-            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {StringCalculator.add("-1");});
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+                  StringCalculator.add("-1");
+            });
             assertThat(exception.getMessage()).contains("Negative numbers not allowed -1");
       }
 
       @Test
       @DisplayName("Assert that multiple negative numbers throws exception")
       void assertThatMultipleNegativeNumbersThrowsException() {
-            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {StringCalculator.add("-1,2,3,-4");});
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+                  StringCalculator.add("-1,2,3,-4");
+            });
             assertThat(exception.getMessage()).contains("Negative numbers not allowed -1,-4");
       }
 
@@ -87,5 +91,10 @@ public class StringCalculatorTest {
             assertThat(result).isEqualTo(6);
       }
 
-
+      @Test
+      @DisplayName("Assert that multiple delimiters with length longer than one char can be used")
+      void assertThatMultipleDelimitersWithLengthLongerThanOneCharCanBeUsed() {
+            int result = StringCalculator.add("//[***][%%%]\n1***2%%%3");
+            assertThat(result).isEqualTo(6);
+      }
 }
