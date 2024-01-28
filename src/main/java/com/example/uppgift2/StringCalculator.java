@@ -39,12 +39,17 @@ public class StringCalculator {
             }
             int sum = 0;
             for (String number : numArray) {
-                  sum += Integer.parseInt(number);
+                  int num = Integer.parseInt(number);
+                  if (num > 1000) {
+
+                        num = 0;
+
+                  }
+                        sum += num;
+
+
             }
             return sum;
-
       }
 
-
 }
-
