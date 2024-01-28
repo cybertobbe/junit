@@ -80,5 +80,12 @@ public class StringCalculatorTest {
             assertThat(result).isEqualTo(6);
       }
 
+      @Test
+      @DisplayName("Assert that multiple delimiters can be used")
+      void assertThatMultipleDelimitersCanBeUsed() {
+            int result = StringCalculator.add("//[*][%]\n1*2%3");
+            assertThat(result).isEqualTo(6);
+      }
+
 
 }

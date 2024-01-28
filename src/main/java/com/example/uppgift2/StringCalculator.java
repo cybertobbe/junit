@@ -1,8 +1,7 @@
 package com.example.uppgift2;
 
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.regex.Pattern;
 
 public class StringCalculator {
@@ -17,7 +16,6 @@ public class StringCalculator {
             if (numbers.startsWith("//")) {
                   int delStartIndex = numbers.indexOf("//") + 2;
                   int delEndIndex = numbers.indexOf('\n');
-                  // int delimiterIndex = numbers.indexOf("\n");
                   String customDelimiter = numbers.substring(delStartIndex, delEndIndex);
                   delimiter = "[" + Pattern.quote(customDelimiter) + "|\n]";
                   numbers = numbers.substring(delEndIndex + 1);
