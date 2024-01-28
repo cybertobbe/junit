@@ -3,6 +3,7 @@ package com.example.uppgift2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
 
@@ -12,12 +13,14 @@ public class StringCalculator {
                   return 0;
             }
 
-
             String delimiter = "[,|\n]";
             if (numbers.startsWith("//")) {
-                  int delimiterIndex = numbers.indexOf("\n");
-                  delimiter = numbers.substring(2, delimiterIndex);
-                  numbers = numbers.substring(delimiterIndex + 1);
+                  int delStartIndex = numbers.indexOf("//") + 2;
+                  int delEndIndex = numbers.indexOf('\n');
+                  // int delimiterIndex = numbers.indexOf("\n");
+                  String customDelimiter = numbers.substring(delStartIndex, delEndIndex);
+                  delimiter = "[" + Pattern.quote(customDelimiter) + "|\n]";
+                  numbers = numbers.substring(delEndIndex + 1);
             }
 
             String[] numArray = numbers.split(delimiter);
@@ -26,10 +29,10 @@ public class StringCalculator {
                   throw new IllegalArgumentException("Contains ',\\n'");
             }
 
-            String negativeNumbers = "";
+            StringBuilder negativeNumbers = new StringBuilder();
             for (String element : numArray) {
                   if (element.startsWith("-")) {
-                        negativeNumbers += element + ",";
+                        negativeNumbers.append(element).append(",");
                   }
             }
 
@@ -39,17 +42,24 @@ public class StringCalculator {
             }
             int sum = 0;
             for (String number : numArray) {
-                  int num = Integer.parseInt(number);
-                  if (num > 1000) {
 
-                        num = 0;
+                  if (!number.isEmpty()) {
+                        int num = Integer.parseInt(number);
 
-                  }
+                        if (num > 1000)
+
+                              num = 0;
                         sum += num;
 
+
+
+                  }
 
             }
             return sum;
       }
 
 }
+
+
+
