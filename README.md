@@ -1,4 +1,4 @@
-Junit-test a schoolproject
+Junit-testing, a schoolproject.
 
 The project uses the JUnit 5 testing framework and AssertJ for assertions. The tests are designed to be descriptive and self-explanatory, with each test case having a descriptive name explaining what it is testing.
 
