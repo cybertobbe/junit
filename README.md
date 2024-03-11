@@ -11,3 +11,6 @@ Write <b>unit tests</b> for the classes Employee and Employees so that we get 10
 Implement the following tasks using <b>Testdriven Development</b>. After each test with the corresponding code, a new commit should be created. Work in your own branch called uppgift2 and merge it into the main branch when the work is done.
 
 <a href="https://kata-log.rocks/string-calculator-kata">https://kata-log.rocks/string-calculator-kata</a>
+
+
+  [![HitCount](https://hits.dwyl.com/cybertobbe/junit.svg?style=flat-square&show=unique)](http://hits.dwyl.com/cybertobbe/junit)
