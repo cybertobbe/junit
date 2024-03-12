@@ -14,4 +14,3 @@ Implement the following tasks using <b>Testdriven Development</b>. After each te
 <a href="https://kata-log.rocks/string-calculator-kata">https://kata-log.rocks/string-calculator-kata</a>
 
 
-  [![HitCount](https://hits.dwyl.com/cybertobbe/junit.svg?style=flat-square&show=unique)](http://hits.dwyl.com/cybertobbe/junit)
